@@ -30,11 +30,32 @@ describe('replace(parent, child)', function() {
 
 });
 
+describe('replace(selector, scope, child)', function() {
+
+  before(function() {
+    this.scope = document.createElement('div');
+    this.scope.innerHTML = '<div id="inner"><p></p></div>';
+  });
+
+  it('should replace scoped selector child with child', function() {
+    replace('#inner', this.scope, document.createElement('input'));
+
+    var inner = this.scope.querySelector('#inner');
+
+    assert(inner.firstElementChild.tagName.toLowerCase() === 'input');
+    assert(inner.children.length === 1);
+  });
+
+});
+
 describe('replace(selector, child)', function() {
 
   before(function() {
-    document.body.innerHTML += '<div id="one"><p></p></div>';
-    document.body.innerHTML += '<div id="two"><hr><p></p></div>';
+    this.content = document.createElement('div');
+    this.content.innerHTML += '<div id="one"><p></p></div>';
+    this.content.innerHTML += '<div id="two"><hr><p></p></div>';
+
+    document.body.appendChild(this.content);
   });
 
   it('should replace selector child with child', function() {

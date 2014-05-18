@@ -6,11 +6,18 @@ Simply replace child elements of a node with another element.
 
     var replace = require('replace');
 
-    // use a selector
-    replace('#content', document.createElement('p'));
+    var element = document.createElement('p');
 
-    // or an element
-    replacer(document.querySelector('#content'), document.createElement('p'));
+    element.innerText = 'I love you!';
+
+    // use a selector
+    replace('#content', element);
+
+    // use a selector with scope
+    replace('#content', document.querySelector('#page'), element);
+
+    // use an element
+    replacer(document.querySelector('#content'), element);
 
 ## Install
 
