@@ -14,7 +14,13 @@ Simply replace child elements of a node with another element.
 
 ## Install
 
-    $ component install bodokaiser/replace
+Preferable with [component](https://github.com/component/component)
+
+    $ component install bodokaiser/component-replace
+
+else with [npm](https://github.com/npmjs/npm)
+
+    $ npm install bodokaiser-replace
 
 ## License
 
