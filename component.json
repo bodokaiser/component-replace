@@ -1,0 +1,33 @@
+{
+
+  "name": "replace",
+
+  "version": "1.0.0",
+
+  "license": "MIT",
+
+  "keywords": [
+    "dom",
+    "insert",
+    "replace"
+  ],
+
+  "repository": "bodokaiser/component-replace",
+
+  "description": "Simply replace an element child nodes.",
+
+  "main": "lib/index.js",
+
+  "scripts": [
+    "lib/index.js"
+  ],
+
+  "development": {
+    "component/assert": "*"
+  },
+
+  "dependencies": {
+    "component/query": "*"
+  }
+
+}
